@@ -17,6 +17,6 @@ jobs:
     - name: Build the Docker image
       run: docker build . --tag simple-api:1
     - name: Dockerhub login
-      run: docker login -u veveritaengineering -p $DOCKERHUB_TOKEN
+      run: docker login -u veveritaengineering -p ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Push Docker image      
       run: docker push veveritaengineering/simple-api -a
