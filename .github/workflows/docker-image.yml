@@ -16,3 +16,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker build . --tag simple-api:1
+    - name: Dockerhub login
+      run: docker login -u veveritaengineering -p $DOCKERHUB_TOKEN
+    - name: Push Docker image      
+      run: docker push veveritaengineering/simple-api -a
