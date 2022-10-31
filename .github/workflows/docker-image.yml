@@ -3,8 +3,6 @@ name: Docker Image CI
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
 
@@ -15,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --tag veveritaengineering/simple-api:1
+      run: docker build . --tag veveritaengineering/simple-api:2
     - name: Dockerhub login
       run: docker login -u veveritaengineering -p ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Push Docker image      
