@@ -16,7 +16,7 @@ RUN npm install
 COPY . .
 
 ENV PORT=3000
-ENV APP_VERSION=2
+ENV APP_VERSION=1
 
 EXPOSE $PORT
 CMD [ "node", "server.js" ]
